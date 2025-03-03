@@ -1,5 +1,5 @@
-# 1. Java 17 ve Maven içeren bir temel görüntü kullanıyoruz
-FROM maven:3.9.4-eclipse-temurin-17 AS build
+# 1. Java 21 ve Maven içeren bir temel görüntü kullanıyoruz
+FROM maven:3.9.4-eclipse-temurin-21 AS build
 
 # 2. Çalışma dizinini oluştur
 WORKDIR /app
@@ -13,8 +13,8 @@ WORKDIR /app/prototip
 # 5. Maven ile projeyi derle
 RUN mvn clean package -DskipTests
 
-# 6. Java 17 içeren bir runtime görüntüsü kullanıyoruz
-FROM openjdk:17-jdk-slim
+# 6. Java 21 içeren bir runtime görüntüsü kullanıyoruz
+FROM openjdk:21-jdk-slim
 
 # 7. Çalışma dizinini oluştur
 WORKDIR /app
