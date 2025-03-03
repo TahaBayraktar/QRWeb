@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Kod</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        canvas {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Bu QR Kodu Tarayın</h1>
+    <canvas id="qr-code"></canvas>
+
+    <script>
+        var qrUrl = "[[${qrUrl}]]"; // Thymeleaf ile backend'den gelen URL
+        console.log("QR URL:", qrUrl); // Konsolda QR URL kontrolü
+        var qr = new QRious({
+            element: document.getElementById("qr-code"),
+            value: qrUrl,
+            size: 200
+        });
+    </script>
+
+</body>
+</html>
