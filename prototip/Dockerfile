@@ -2,7 +2,7 @@
 FROM maven:3.9.4-eclipse-temurin-17 AS build
 
 # 2. Çalışma dizinini oluştur
-WORKDIR /app
+WORKDIR /app/prototip
 
 # 3. Proje dosyalarını konteynerin içine kopyala
 COPY . .
