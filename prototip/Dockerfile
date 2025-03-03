@@ -1,5 +1,5 @@
 # 1. Java 17 ve Maven içeren bir temel görüntü kullanıyoruz
-FROM maven:3.8.6-openjdk-17 AS build
+FROM maven:3.9.4-eclipse-temurin-17 AS build
 
 # 2. Çalışma dizinini oluştur
 WORKDIR /app
