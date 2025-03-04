@@ -21,7 +21,7 @@ public class QRCodeService {
         String qrText = UUID.randomUUID().toString(); // Benzersiz bir QR kod metni üret
 
         // QR kodun içine IP adresi ile tam URL ekleyelim
-        String qrUrl = SERVER_URL +"/api/qr/scan?qrText=" + qrText;
+        String qrUrl = SERVER_IP +"/api/qr/scan?qrText=" + qrText;
         System.out.println("Oluşturulan QR Kodu URL: " + qrUrl); // Terminalde görmek için yazdır
 
         // QR kodu veritabanına kaydet
