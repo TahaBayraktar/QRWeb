@@ -14,14 +14,14 @@ public class QRCodeService {
     private QRCodeRepository qrCodeRepository;
 
     // Bilgisayarın manuel IP adresi
-    private static final String SERVER_IP = ""; // BURAYA BİLGİSAYARININ IP ADRESİNİ YAZ
+    private static final String SERVER_IP = "https://qrweb-wde7.onrender.com"; // BURAYA BİLGİSAYARININ IP ADRESİNİ YAZ
 
     // QR Kodu oluştur ve veritabanına kaydet
     public String generateQRCode() {
         String qrText = UUID.randomUUID().toString(); // Benzersiz bir QR kod metni üret
 
         // QR kodun içine IP adresi ile tam URL ekleyelim
-        String qrUrl = "http://" + SERVER_IP + "/api/qr/scan?qrText=" + qrText;
+        String qrUrl = SERVER_URL +"/api/qr/scan?qrText=" + qrText;
         System.out.println("Oluşturulan QR Kodu URL: " + qrUrl); // Terminalde görmek için yazdır
 
         // QR kodu veritabanına kaydet
